@@ -48,4 +48,3 @@ def setup_logger(log_file='logs/application.log'):
 
     # 핸들러 추가
     logger.addHandler(file_handler)
-    logger.addHandler(stream_handler)
