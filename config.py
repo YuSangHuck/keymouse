@@ -8,6 +8,7 @@ MODE_MOUSE = 'mouse'
 KEY_SWITCH = 'caps lock'
 KEY_SWITCH_TIME_WINDOW = 1
 KEY_SWITCH_REQUIRED_PRESSES = 2
+KEY_PREFIX = 'ctrl+shift+alt'
 KEY_H = 'h'
 KEY_J = 'j'
 KEY_K = 'k'
@@ -17,7 +18,7 @@ KEY_I = 'i'
 KEY_PLUS = '+'
 KEY_MINUS = '-'
 KEY_C = 'c'
-KEY_CTRL = 'ctrl'
+KEY_WIN = 'left windows'
 
 # 방향 상수
 DIRECTION_LEFT = 'left'

@@ -4,7 +4,7 @@ import time
 from mouse_control import move_mouse, scroll_mouse, click_mouse
 from config import (
     MODE_KEYBOARD, MODE_MOUSE, KEY_SWITCH_TIME_WINDOW, KEY_SWITCH_REQUIRED_PRESSES,
-    KEY_H, KEY_J, KEY_K, KEY_L, KEY_U, KEY_I, KEY_C, KEY_CTRL,
+    KEY_PREFIX, KEY_H, KEY_J, KEY_K, KEY_L, KEY_U, KEY_I, KEY_C, KEY_WIN,
     DIRECTION_DOWN, DIRECTION_LEFT, DIRECTION_RIGHT, DIRECTION_UP,
     MOUSE_MOVE_VALUE_BIG, MOUSE_MOVE_VALUE_SMALL, MOUSE_SCROLL_VALUE_BIG, MOUSE_SCROLL_VALUE_SMALL,
     PROGRAM_NAME
@@ -21,19 +21,19 @@ def toggle_mode():
     global control_mode
     if control_mode == MODE_KEYBOARD:
         control_mode = MODE_MOUSE
-        hotkeys.append(keyboard.add_hotkey(KEY_H, move_mouse, args=(DIRECTION_LEFT, MOUSE_MOVE_VALUE_BIG)))
-        hotkeys.append(keyboard.add_hotkey(KEY_J, move_mouse, args=(DIRECTION_DOWN, MOUSE_MOVE_VALUE_BIG)))
-        hotkeys.append(keyboard.add_hotkey(KEY_K, move_mouse, args=(DIRECTION_UP, MOUSE_MOVE_VALUE_BIG)))
-        hotkeys.append(keyboard.add_hotkey(KEY_L, move_mouse, args=(DIRECTION_RIGHT, MOUSE_MOVE_VALUE_BIG)))
-        hotkeys.append(keyboard.add_hotkey(KEY_CTRL + '+' + KEY_H, move_mouse, args=(DIRECTION_LEFT, MOUSE_MOVE_VALUE_SMALL)))
-        hotkeys.append(keyboard.add_hotkey(KEY_CTRL + '+' + KEY_J, move_mouse, args=(DIRECTION_DOWN, MOUSE_MOVE_VALUE_SMALL)))
-        hotkeys.append(keyboard.add_hotkey(KEY_CTRL + '+' + KEY_K, move_mouse, args=(DIRECTION_UP, MOUSE_MOVE_VALUE_SMALL)))
-        hotkeys.append(keyboard.add_hotkey(KEY_CTRL + '+' + KEY_L, move_mouse, args=(DIRECTION_RIGHT, MOUSE_MOVE_VALUE_SMALL)))
-        hotkeys.append(keyboard.add_hotkey(KEY_I, scroll_mouse, args=(DIRECTION_DOWN, MOUSE_SCROLL_VALUE_BIG)))
-        hotkeys.append(keyboard.add_hotkey(KEY_U, scroll_mouse, args=(DIRECTION_UP, MOUSE_SCROLL_VALUE_BIG)))
-        hotkeys.append(keyboard.add_hotkey(KEY_CTRL + '+' + KEY_I, scroll_mouse, args=(DIRECTION_DOWN, MOUSE_SCROLL_VALUE_SMALL)))
-        hotkeys.append(keyboard.add_hotkey(KEY_CTRL + '+' + KEY_U, scroll_mouse, args=(DIRECTION_UP, MOUSE_SCROLL_VALUE_SMALL)))
-        hotkeys.append(keyboard.add_hotkey(KEY_C, click_mouse))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_H, move_mouse, args=(DIRECTION_LEFT, MOUSE_MOVE_VALUE_BIG)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_J, move_mouse, args=(DIRECTION_DOWN, MOUSE_MOVE_VALUE_BIG)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_K, move_mouse, args=(DIRECTION_UP, MOUSE_MOVE_VALUE_BIG)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_L, move_mouse, args=(DIRECTION_RIGHT, MOUSE_MOVE_VALUE_BIG)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_WIN + '+' + KEY_H, move_mouse, args=(DIRECTION_LEFT, MOUSE_MOVE_VALUE_SMALL)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_WIN + '+' + KEY_J, move_mouse, args=(DIRECTION_DOWN, MOUSE_MOVE_VALUE_SMALL)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_WIN + '+' + KEY_K, move_mouse, args=(DIRECTION_UP, MOUSE_MOVE_VALUE_SMALL)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_WIN + '+' + KEY_L, move_mouse, args=(DIRECTION_RIGHT, MOUSE_MOVE_VALUE_SMALL)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_I, scroll_mouse, args=(DIRECTION_DOWN, MOUSE_SCROLL_VALUE_BIG)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_U, scroll_mouse, args=(DIRECTION_UP, MOUSE_SCROLL_VALUE_BIG)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_WIN + '+' + KEY_I, scroll_mouse, args=(DIRECTION_DOWN, MOUSE_SCROLL_VALUE_SMALL)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_WIN + '+' + KEY_U, scroll_mouse, args=(DIRECTION_UP, MOUSE_SCROLL_VALUE_SMALL)))
+        hotkeys.append(keyboard.add_hotkey(KEY_PREFIX + '+' + KEY_C, click_mouse))
         logger_instance.debug("All hotkeys added")
     else:
         control_mode = MODE_KEYBOARD
