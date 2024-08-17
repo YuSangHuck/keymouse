@@ -1,12 +1,18 @@
+- [requirement](#requirement)
 - [keymouse](#keymouse)
   - [TODO](#todo)
   - [빌드](#빌드)
   - [사용법](#사용법)
   - [기능](#기능)
 
+# requirement
+
+- Python 3.11.9
+
 # keymouse
 
-keyboard를 mouse로 이용하자
+- 침대에서 컴퓨터가 하고싶다..
+- keyboard를 mouse로 이용하자...!
 
 ## TODO
 

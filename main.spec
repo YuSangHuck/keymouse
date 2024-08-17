@@ -1,12 +1,14 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from PyInstaller.utils.hooks import collect_data_files
+from config import PROGRAM_NAME
 
 a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
-    hiddenimports=[],
+    datas=collect_data_files('win10toast'),
+    hiddenimports=['win10toast', 'pkg_resources', 'pkg_resources.py2_warn'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -22,7 +24,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='keymouse',
+    name=PROGRAM_NAME,
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

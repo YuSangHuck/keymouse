@@ -1,6 +1,8 @@
 import logging
 import os
 
+PROGRAM_NAME = 'keymouse'
+
 # 모드 상수
 MODE_KEYBOARD = 'keyboard'
 MODE_MOUSE = 'mouse'

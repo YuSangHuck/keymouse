@@ -1,6 +1,7 @@
 import os
 import sys
 import logging
+from config import PROGRAM_NAME
 
 class SingletonLogger:
     _instance = None
@@ -23,7 +24,7 @@ class SingletonLogger:
         log_dir = os.path.dirname(log_file_path)
         os.makedirs(log_dir, exist_ok=True)
 
-        logger = logging.getLogger('KeyMouseLogger')
+        logger = logging.getLogger(PROGRAM_NAME)
         logger.setLevel(logging.DEBUG)
 
         # 파일 핸들러 설정
