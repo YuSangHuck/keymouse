@@ -1,7 +1,7 @@
 - [keymouse](#keymouse)
   - [TODO](#todo)
   - [빌드](#빌드)
-  - [윈도우 시작프로그램에 추가](#윈도우-시작프로그램에-추가)
+  - [사용법](#사용법)
   - [기능](#기능)
 
 # keymouse
@@ -17,10 +17,9 @@ keyboard를 mouse로 이용하자
 
 pyinstaller main.spec
 
-## 윈도우 시작프로그램에 추가
+## 사용법
 
-- keymouse.bat 바로가기 만들기
-- win+r 에서 shell:startup의 경로에 바로가기 잘라내기
+- keymouse.bat 파일을 통해 keymouse 프로세스를 on/off한다
 
 ## 기능
 
