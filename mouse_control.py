@@ -1,7 +1,6 @@
 import pyautogui
 from logger import logger_instance
 from config import (
-    MOUSE_VALUE_ADJUSTMENT,
     DIRECTION_DOWN, DIRECTION_LEFT, DIRECTION_RIGHT, DIRECTION_UP
 )
 
@@ -26,14 +25,3 @@ def scroll_mouse(direction=None, value=None):
 def click_mouse():
     pyautogui.click()
     logger_instance.info("Mouse clicked")
-
-def adjust_value_mouse(increase=True):
-    global MOUSE_VALUE_ADJUSTMENT
-    global mouse_move_value, mouse_scroll_value
-    if increase:
-        mouse_move_value += MOUSE_VALUE_ADJUSTMENT
-        mouse_scroll_value += MOUSE_VALUE_ADJUSTMENT
-    else:
-        mouse_move_value = max(0, mouse_move_value - MOUSE_VALUE_ADJUSTMENT)
-        mouse_scroll_value = max(0, mouse_scroll_value - MOUSE_VALUE_ADJUSTMENT)
-    logger_instance.info(f"Adjusted mouse_move_value to {mouse_move_value}, mouse_scroll_value to {mouse_scroll_value}")

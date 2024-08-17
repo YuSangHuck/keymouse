@@ -29,7 +29,9 @@ pyinstaller main.spec
    2. mouse 모드 진입시 키보드를 마우스처럼 쓸 수 있다
 2. move_mouse
    1. vim처럼 h,j,k,l로 움직인다
+   2. 세밀하게 움직이려면 ctrl키를 누른채로
 3. scroll_mouse
    1. u,i로 스크롤한다
+   2. 세밀하게 움직이려면 ctrl키를 누른채로
 4. click mouse
    1. c를 누르면 클릭한다

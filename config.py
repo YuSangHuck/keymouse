@@ -18,6 +18,7 @@ KEY_I = 'i'
 KEY_PLUS = '+'
 KEY_MINUS = '-'
 KEY_C = 'c'
+KEY_CTRL = 'ctrl'
 
 # 방향 상수
 DIRECTION_LEFT = 'left'
@@ -26,7 +27,8 @@ DIRECTION_UP = 'up'
 DIRECTION_RIGHT = 'right'
 
 # 마우스 값 조정
-MOUSE_VALUE_ADJUSTMENT = 30
-mouse_move_value = 30
-mouse_scroll_value = 30
+MOUSE_MOVE_VALUE_BIG = 100
+MOUSE_MOVE_VALUE_SMALL = 10
+MOUSE_SCROLL_VALUE_BIG = 100
+MOUSE_SCROLL_VALUE_SMALL = 10
 
