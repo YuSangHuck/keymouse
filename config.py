@@ -1,6 +1,3 @@
-import logging
-import os
-
 PROGRAM_NAME = 'keymouse'
 
 # 모드 상수

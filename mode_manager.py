@@ -6,8 +6,10 @@ from config import (
     MODE_KEYBOARD, MODE_MOUSE, KEY_SWITCH_TIME_WINDOW, KEY_SWITCH_REQUIRED_PRESSES,
     KEY_H, KEY_J, KEY_K, KEY_L, KEY_U, KEY_I, KEY_C, KEY_CTRL,
     DIRECTION_DOWN, DIRECTION_LEFT, DIRECTION_RIGHT, DIRECTION_UP,
-    MOUSE_MOVE_VALUE_BIG, MOUSE_MOVE_VALUE_SMALL, MOUSE_SCROLL_VALUE_BIG, MOUSE_SCROLL_VALUE_SMALL
+    MOUSE_MOVE_VALUE_BIG, MOUSE_MOVE_VALUE_SMALL, MOUSE_SCROLL_VALUE_BIG, MOUSE_SCROLL_VALUE_SMALL,
+    PROGRAM_NAME
 )
+from notifier import notifier_instance
 
 # 모드 및 핫키 관리
 control_mode = MODE_KEYBOARD
@@ -40,7 +42,9 @@ def toggle_mode():
         hotkeys = []  # 핫키 목록 초기화
         logger_instance.debug("All hotkeys removed")
 
-    logger_instance.info(f"Change mode to '{control_mode}'")
+    msg = f"Change mode to '{control_mode}'"
+    notifier_instance.noti(PROGRAM_NAME, msg)
+    logger_instance.info(msg)
 
 def check_switch():
     global key_switch_press_times

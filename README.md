@@ -16,8 +16,8 @@
 
 ## TODO
 
-- noti기능
-  - logfile 외에 toast나 alert해주기(toggle_mode에만 넣으면 될듯?)
+- kill signal handler?
+  - log 및 noti?
 
 ## 빌드
 

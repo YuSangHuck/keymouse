@@ -1,4 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
+import sys
+import os
+sys.path.append(os.path.abspath('.'))  # 현재 디렉토리를 PYTHONPATH에 추가
 
 from PyInstaller.utils.hooks import collect_data_files
 from config import PROGRAM_NAME
