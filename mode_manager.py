@@ -1,5 +1,5 @@
 import keyboard
-import logging
+from logger import logger_instance
 import time
 from mouse_control import move_mouse, scroll_mouse, click_mouse, adjust_value_mouse
 from config import (
@@ -12,8 +12,6 @@ from config import (
 control_mode = MODE_KEYBOARD
 key_switch_press_times = []
 hotkeys = []
-
-logger = logging.getLogger(__name__)
 
 def toggle_mode():
     global hotkeys
@@ -29,14 +27,15 @@ def toggle_mode():
         hotkeys.append(keyboard.add_hotkey(KEY_PLUS, lambda: adjust_value_mouse(increase=True)))
         hotkeys.append(keyboard.add_hotkey(KEY_MINUS, lambda: adjust_value_mouse(increase=False)))
         hotkeys.append(keyboard.add_hotkey(KEY_C, click_mouse))
+        logger_instance.debug("All hotkeys added")
     else:
         control_mode = MODE_KEYBOARD
         for hotkey in hotkeys:
             keyboard.remove_hotkey(hotkey)
         hotkeys = []  # 핫키 목록 초기화
-        logger.info("All hotkeys removed")
+        logger_instance.debug("All hotkeys removed")
 
-    logger.info(f"Change mode to '{control_mode}'")
+    logger_instance.info(f"Change mode to '{control_mode}'")
 
 def check_switch():
     global key_switch_press_times
@@ -46,4 +45,4 @@ def check_switch():
     if len(key_switch_press_times) >= KEY_SWITCH_REQUIRED_PRESSES:
         toggle_mode()
         key_switch_press_times = []
-    logger.info(f"On switch key called. Press times: {key_switch_press_times}")
+    logger_instance.debug(f"On switch key called. Press times: {key_switch_press_times}")
