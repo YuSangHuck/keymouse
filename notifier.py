@@ -1,6 +1,7 @@
 # notifier.py
 from logger import logger_instance
 from win10toast import ToastNotifier
+from config import NOTIFIER_DEFAULT_DURATION
 
 class SingletonNotifier:
     _instance = None
@@ -18,7 +19,7 @@ class SingletonNotifier:
     def get_notifiler(self):
         return self
 
-    def noti(self, title, message, duration=3):
+    def noti(self, title, message, duration=NOTIFIER_DEFAULT_DURATION):
         try:
             self.toaster.show_toast(title,
                                     message,
